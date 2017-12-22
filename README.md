@@ -1,6 +1,6 @@
 # spring-boot-csv-download
 Streaming large result set from MySQL using Java 8 and then download data as large/big CSV file. <br/><br/>Fetching and processing large amount of resultsets from the database, MySQL in my case, using simple and commonly used approaches often result in out of memory error. With the ORMs or libraries like JPA, where we work on high level abstractions provided by such libraries, chances of OutOfMemory error is very high if the resultset is considerably large.
-<br/>With the introduction of Streams in Java 8, we can fetch and process large amount of resultsets consuming minimal amount of memory foot print.
+<br/>With the introduction of Streams in Java 8, we can fetch and process large amount of resultsets with minimal memory foot print.
 
 ## Getting Started
 
@@ -21,9 +21,14 @@ Then I have added two methods in **SampleController**, one for Stream (generateC
 For running the app,
 - Open **application.properties** file and update "spring.datasource.*" properties as per your configurations.
 - Once, changes are done in **application.properties**, open **"AppStarter.Java"** file and select run/debug.
-- If app starts successfully, hit<br/>
-**GET** http://localhost:8080/api/sample/userdetail/list/csv <br/>
+- If app starts successfully, hit. (I did some sort of perf monitoring (threads used 50), attaching perf results for both requests.)<br/><br/><br/>
+**GET** http://localhost:8080/api/sample/userdetail/list/csv
+<br/><br/><br/>
+![picture alt](https://github.com/greyseal/spring-boot-csv-download/blob/master/src/main/resources/list.png "Using List")
+<br/><br/><br/>
 **GET** http://localhost:8080/api/sample/userdetail/stream/csv
+<br/><br/><br/>
+![picture alt](https://github.com/greyseal/spring-boot-csv-download/blob/master/src/main/resources/stream.png "Using Stream")
 
 ## Built With
 
