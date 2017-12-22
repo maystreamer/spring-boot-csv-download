@@ -30,7 +30,7 @@ public class SampleController {
 
 	@RequestMapping(value = "/userdetail/stream/csv", method = RequestMethod.GET)
 	@Transactional(readOnly = true)
-	public void generateCSV(HttpServletResponse response) {
+	public void generateCSVUsingStream(HttpServletResponse response) {
 		response.addHeader("Content-Type", "application/csv");
 		response.addHeader("Content-Disposition", "attachment; filename=user_details.csv");
 		response.setCharacterEncoding("UTF-8");
@@ -50,7 +50,7 @@ public class SampleController {
 	}
 
 	@RequestMapping(value = "/userdetail/list/csv", method = RequestMethod.GET)
-	public void generateCSVOld(HttpServletResponse response) {
+	public void generateCSVUsingList(HttpServletResponse response) {
 		response.addHeader("Content-Type", "application/csv");
 		response.addHeader("Content-Disposition", "attachment; filename=user_details.csv");
 		response.setCharacterEncoding("UTF-8");
