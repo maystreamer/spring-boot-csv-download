@@ -39,8 +39,8 @@ For running the app,
 ![alt text](https://github.com/greyseal/spring-boot-csv-download/blob/master/src/main/resources/stream_gc.png "Using Stream GC")
 <br/>
 
-**Note** :  Looking at **[list_gc.png]**, the old generation is at its max capacity. Heap almost remains choked up for the entire duration until HTTP response is sent back to the client. In case of any new HTTP request/s during this critical period, we are highly likely to get **OutOfMemoryError**. <br/>
-Objects reaching the Old generation are stuck until a Major garbage collection cycle happens(an expensive operation, stopping everything for at least a second to as much as 2 seconds). _Thus, it becomes one of the important aspect of application arhitecture to prevent objects from being "tenured" into the Old generation_.<br/>
+**Note** :  Looking at **[list_gc.png]**, the old generation is at its max capacity. Heap almost remains choked up for the entire duration until HTTP response is sent back to the client. In case of any new HTTP request/s during this critical period, we are highly likely to get **OutOfMemoryError**. <br/><br/>
+Objects reaching the Old generation are stuck until a Major garbage collection cycle happens(an expensive operation, stopping everything for at least a second to as much as 2 seconds). _Thus, it becomes one of the important aspect of application arhitecture to prevent objects from being "tenured" into the Old generation_.<br/><br/>
 Now, if we look at **[stream_gc]**, the Old generation is just a flat line (no objects are getting tenured) and thus allowing room to handle any other incoming HTTP requests smartly. This explains Java 8 streams are the way to go.
 
 ## Built With
