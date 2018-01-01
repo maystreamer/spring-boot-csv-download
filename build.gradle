@@ -2,6 +2,7 @@ buildscript {
 	ext {
 		springBootVersion	=	'1.5.8.RELEASE'
 		mysqlVersion			=	'6.0.6'
+		rxJavaVersion		=	'2.0.0'
 	}
 	repositories {
 		jcenter()
@@ -27,6 +28,7 @@ repositories {
 dependencies {
 	compile "org.springframework.boot:spring-boot-starter-web",
 			"org.springframework.boot:spring-boot-starter-data-jpa",
+			"org.springframework.boot:spring-boot-starter-webflux",
 			"mysql:mysql-connector-java:${mysqlVersion}"
 			
 	testCompile 'org.springframework.boot:spring-boot-starter-test'

@@ -18,6 +18,7 @@ public interface SampleRepository extends JpaRepository<UserDetail, Long> {
 	@Query(value = "select u from UserDetail u")
 	public Stream<UserDetail> getAll();
 
+	@QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = "" + Integer.MIN_VALUE))
 	@Query(value = "select u from UserDetail u")
 	public List<UserDetail> getAllOldWay();
 }

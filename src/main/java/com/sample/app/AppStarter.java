@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(scanBasePackages = {"com.sample.app"})
-@ComponentScan({"com.sample.app"})
+@SpringBootApplication(scanBasePackages = { "com.sample.app" })
+@ComponentScan({ "com.sample.app" })
 @EnableConfigurationProperties
 @EnableAutoConfiguration
 public class AppStarter {

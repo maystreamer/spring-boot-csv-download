@@ -68,4 +68,9 @@ public class SampleController {
 			throw new RuntimeException("There is an error while downloading user_details.csv", ix);
 		}
 	}
+
+	@RequestMapping(value = "/userdetail/rx/csv", method = RequestMethod.GET)
+	public void generateCSVUsingRx() {
+		return;
+	}
 }
